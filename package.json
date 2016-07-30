@@ -1,0 +1,13 @@
+{
+  "name": "node-mig",
+  "version": "0.0.3",
+  "description": "DB agnostic migrations module for node.js.",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jgordon615/node-mig.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "homepage": "https://github.com/jgordon615/node-mig#readme"
+}
