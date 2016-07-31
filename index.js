@@ -71,8 +71,12 @@ function migrate(options, processor, callback) {
 
                 var fileRunners = files.map(function(file) {
                     return function(cb) {
-                        processor.runMigration(options, file, function() {
-                            processor.recordSchemaChange(file, cb);
+                        processor.runMigration(options, file, function(err) {
+                            if (err) {
+                                console.warn("Error running migration", file.num, ":", err);
+                                return cb(err);
+                            }
+                            processor.recordSchemaChange(options, file, cb);
                         });
                     }
                 });
