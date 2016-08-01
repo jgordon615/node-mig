@@ -5,7 +5,7 @@ var fs = require("fs"),
         async = require("async");
 
 function getFileData(options, callback) {
-    fs.readdir(options.migrationsFolder, null, function(err, files) {
+    fs.readdir(options.migrationsFolder, function(err, files) {
         if (err) {
             return callback(err);
         }
